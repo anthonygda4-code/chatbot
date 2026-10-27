@@ -1,0 +1,211 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: #0d0d0d;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #e50914;
+    box-shadow: 0 4px 25px rgba(229, 9, 20, 0.15);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+header h1::first-letter {
+    color: #ff1722;
+}
+
+/* ===== CARTÃO PRINCIPAL ===== */
+.cartao {
+    position: relative;
+    background: linear-gradient(145deg, #151515, #0c0c0c);
+    width: 90%;
+    max-width: 650px;
+    margin: 90px auto;
+    padding: 55px 40px;
+    text-align: center;
+    border: 1px solid #292929;
+    border-top: 3px solid #ff1722;
+    border-radius: 12px;
+    box-shadow:
+        0 0 25px rgba(229, 9, 20, 0.08),
+        0 15px 45px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Brilho vermelho ao redor */
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 30px rgba(229, 9, 20, 0.15),
+        0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== TÍTULO ===== */
+.cartao h2 {
+    color: #ff202b;
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px rgba(255, 23, 34, 0.2);
+}
+
+/* ===== DESCRIÇÃO ===== */
+.cartao p {
+    color: #bdbdbd;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* ===== BOTÃO ===== */
+.botao-contato {
+    display: inline-block;
+    background: #e50914;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 17px 32px;
+    border: 1px solid #ff343e;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 18px rgba(229, 9, 20, 0.25);
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.botao-contato:hover {
+    background: #ff202b;
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 12px #e50914,
+        0 0 30px rgba(229, 9, 20, 0.45);
+}
+
+.botao-contato:active {
+    transform: scale(0.97);
+}
+
+.botao-contato:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 5px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    margin-top: auto;
+    background: #0d0d0d;
+    color: #777777;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid #262626;
+}
+
+/* ===== BARRA DE ROLAGEM ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e50914;
+    border-radius: 10px;
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA ===== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cartao {
+    animation: aparecer 0.7s ease-out;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.45rem;
+        letter-spacing: 2px;
+    }
+
+    .cartao {
+        width: 92%;
+        margin: 55px auto;
+        padding: 38px 22px;
+    }
+
+    .cartao h2 {
+        font-size: 1.45rem;
+    }
+
+    .cartao p {
+        font-size: 0.95rem;
+    }
+
+    .botao-contato {
+        display: block;
+        width: 100%;
+        padding: 16px 12px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
